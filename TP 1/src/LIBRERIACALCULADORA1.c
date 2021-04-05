@@ -25,7 +25,7 @@ int main()
 	float contadorX;
 	float numeroX;
 	float contadorY;
-	float numeroY;
+	//float numeroY;
 
 	respuesta='s';
 	contadorX=0;
