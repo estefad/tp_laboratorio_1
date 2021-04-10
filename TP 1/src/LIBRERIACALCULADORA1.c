@@ -11,6 +11,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include "LIBRERIACALCULADORA.h"
+#include "VALIDACIONES.h"
 
 
 int main()
@@ -19,13 +20,16 @@ int main()
 	float numeroA;
 	float numeroB;
 	int opcionesMenu;
-	float resultado;
+	float resultadoSuma;
+	float resultadoResta;
+	float resultadoProducto;
+	float resultadoDivision;
 	long int resultadoA;
 	long int resultadoB;
 	float contadorX;
-	float numeroX;
+	//float X;
 	float contadorY;
-	//float numeroY;
+	//float Y;
 
 	respuesta='s';
 	contadorX=0;
@@ -35,66 +39,76 @@ int main()
 
 	do
 	{
-		/*printf(" '1'- Operando X");
-		printf("\n '2'- Operando Y");
+		system("COLOR 05");
+		printf("bienvenido a la calculadora \n");
+
+		printf("\n '1'- Ingresar Operando X");
+		printf("\n '2'- Ingresar Operando Y");
 		printf("\n '3' - Calcular todas las operaciones");
 		printf("\n '4' - Mostrar resultados");
 		printf("\n '5' - Salir");
-		scanf("\n %d", &opcionesMenu);*/
+
+		opcionesMenu=PedirEntero("ingrese una opcion", "Error, reingrese una opcion valida", 1, 5);
+		//scanf("\n %d", &opcionesMenu);
 
 		switch (opcionesMenu)
 		{
-			case '1':
-				printf("Usted ingreso la opcion 1. Por favor ingrese el primer numero (A=x): ");
-				scanf("%f", &numeroA);
-				if(contadorX==0)
+			case 1:
+				if(opcionesMenu==1)
 				{
-					numeroA=numeroX;
-					contadorX++;
+					printf("Usted ingreso la opcion 1. Por favor ingrese el primer numero (A=x): ");
+					scanf("%f", &numeroA);
+					if(contadorX==0)
+					{
+						//numeroA=X;
+						contadorX++;
+					}
 				}
+
 				break;
 
-			case '2':
+			case 2:
 				printf("Usted ingreso la opcion 2. Por favor ingrese el segundo numero (B=y): ");
 				scanf("%f", &numeroB);
 				if(contadorY==0)
 				{
-					numeroB=numeroY;
+					//numeroB=Y;
 					contadorY++;
 				}
 				break;
 
-			case '3':
-				resultado=Sumar(numeroA, numeroB);
-				resultado=Restar(numeroA, numeroB);
-				resultado=Multiplicacion(numeroA, numeroB);
-				resultado=Division(numeroA, numeroB);
+			case 3:
+				resultadoSuma=Sumar(numeroA, numeroB);
+				resultadoResta=Restar(numeroA, numeroB);
+				resultadoProducto=Multiplicacion(numeroA, numeroB);
+				resultadoDivision=Division(numeroA, numeroB);
 				resultadoA=Factorial(numeroA, numeroB);
 				resultadoB=Factorial(numeroB, numeroA);
 				printf("se estan ejecutando las operaciones para X= %f e Y= %f", numeroA, numeroB);
 				break;
 
-			case '4':
-				printf("La suma es: %f \n", resultado);
-				printf("La resta es: %f \n", resultado);
-				printf("La multiplicacion es: %f \n", resultado);
+			case 4:
+				printf("La suma es: %f \n", resultadoSuma);
+				printf("La resta es: %f \n", resultadoResta);
+				printf("La multiplicacion es: %f \n", resultadoProducto);
 				if(numeroB==0)
 				{
 					printf("error, no se admite la division por cero");
 				}
 				else
 				{
-					printf("la division es: %f \n", resultado);
+					printf("la division es: %.2f \n", resultadoDivision);
 				}
 				printf("\n El resultado de factorial X! es: %ld \n El resultado de factorial Y! es: %ld ", resultadoA, resultadoB);
 				break;
 
-			case '5':
+			case 5:
 				printf("\n desea salir? s/n");
 				break;
+				system("pause");
 			}
 
-	}while(respuesta<5);
+	}while(respuesta=='s');
 
 
 

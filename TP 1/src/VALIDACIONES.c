@@ -55,16 +55,19 @@ double PedirDouble(char mensaje[], char mensajeError[], double minimo, double ma
 }
 
 
-char pedirChar(char mensaje[], char mensajeError[])
+char PedirChar(char mensaje[], char mensajeError[])
 {
 	char nombreIngresado;
+	char auxString[1000];
 
     printf("\n %s", mensaje);
-	scanf("%f", &nombreIngresado);
-	while(mensaje!="algo")
+    fflush(stdin);
+	scanf("%s", &nombreIngresado);
+	while(strlen(auxString)>1000)
 	{
 	    printf("\n %s", mensajeError);
-	    scanf("%f", &nombreIngresado);
+	    fflush(stdin);
+	    scanf("%s", &nombreIngresado);
 	}
 
 	return nombreIngresado;
