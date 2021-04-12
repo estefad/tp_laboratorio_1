@@ -6,13 +6,13 @@
  */
 #include "LIBRERIACALCULADORA.h"
 
+
 float Sumar(float numero1, float numero2)
 {
 	float resultado;
 	resultado=numero1+numero2;
 	return resultado;
 }
-
 
 
 float Restar(float numero1, float numero2)
@@ -32,7 +32,6 @@ float Multiplicacion(float numero1, float numero2)
 }
 
 
-
 float Division(float numero1, float numero2)
 {
 	float resultado;
@@ -41,12 +40,17 @@ float Division(float numero1, float numero2)
 }
 
 
-
-unsigned long int Factorial(long int numero1, long int numero2)
+unsigned long int Factorial(long int numero1)
 {
 	 long int resultado;
-	 resultado=numero1*(numero1-1);
-	 resultado=numero2*(numero2-1);
+	 resultado=1;
+	 while(numero1>1)
+	 {
+	      resultado*= numero1;
+	      numero1--;
+	 }
+
+
 	 return resultado;
 }
 

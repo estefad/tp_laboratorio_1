@@ -6,6 +6,8 @@
  */
 
 #include "VALIDACIONES.h"
+#include <string.h>
+
 
 int PedirEntero(char mensaje[], char mensajeError[], int minimo, int maximo)
 {
@@ -44,11 +46,11 @@ double PedirDouble(char mensaje[], char mensajeError[], double minimo, double ma
      double numeroIngresado;
 
     printf("\n %s", mensaje);
-	scanf("%f", &numeroIngresado);
+	scanf("%lf", &numeroIngresado);
 	while(numeroIngresado<minimo || numeroIngresado>maximo)
 	{
 	    printf("\n %s", mensajeError);
-	    scanf("%f", &numeroIngresado);
+	    scanf("%lf", &numeroIngresado);
 	}
 
 	return numeroIngresado;
