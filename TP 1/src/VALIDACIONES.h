@@ -27,6 +27,17 @@ int PedirEntero(char mensaje[], char mensajeError[], int minimo, int maximo);
  */
 float PedirFlotante(char mensaje[], char mensajeError[], float minimo, float maximo);
 
+
+/**
+ * @fn int ValidoFactorial(float)
+ * @brief valido si el parametro que se ingresa es decimal o entero para poder
+ * 			realizar el factorial.
+ *
+ * @return 1 si el parametro es decimal, 0 si es entero
+ */
+int ValidoFactorial(float numero);
+
+
 /**
  * @fn double PedirDouble(char[], char[], double, double)
  * @brief la funcion recibe y valida un dato del tipo double

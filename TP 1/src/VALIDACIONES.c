@@ -40,6 +40,23 @@ float PedirFlotante(char mensaje[], char mensajeError[], float minimo, float max
 	return numeroIngresado;
 }
 
+int ValidoFactorial(float numeroFloat)
+{
+	int rtn;
+	int tomoEntero;
+
+	tomoEntero=numeroFloat;//si ingreso un numero decimal, va a tomar solo la parte entera y en if comparo.
+	if(numeroFloat>tomoEntero || numeroFloat<0)
+	{
+		rtn=1;
+	}
+	else
+	{
+		rtn=0;
+	}
+
+  return rtn;
+}
 
 double PedirDouble(char mensaje[], char mensajeError[], double minimo, double maximo)
 {

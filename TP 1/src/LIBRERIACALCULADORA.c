@@ -52,22 +52,3 @@ unsigned long int Factorial(long int numero1)
 
 	 return resultado;
 }
-
-
-int ValidoFactorial(float numeroFloat)
-{
-	int rtn;
-	int tomoEntero;
-
-	tomoEntero=numeroFloat;//si ingreso un numero decimal, va a tomar solo la parte entera y en if comparo.
-	if(numeroFloat>tomoEntero || numeroFloat<0)
-	{
-		rtn=1;
-	}
-	else
-	{
-		rtn=0;
-	}
-
-  return rtn;
-}

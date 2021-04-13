@@ -119,17 +119,18 @@ int main()
 						resultadoProducto=Multiplicacion(numeroA, numeroB);
 						resultadoDivision=Division(numeroA, numeroB);
 
-						factorialA=ValidoFactorial(numeroA);
-						factorialB=ValidoFactorial(numeroB);
-
-						if(factorialA==0)
+						//factorialA=ValidoFactorial(numeroA);
+						//factorialB=ValidoFactorial(numeroB);
+						resultadoA=Factorial(numeroA);
+						resultadoB=Factorial(numeroB);
+					/*	if(factorialA==0)
 						{
 							resultadoA=Factorial(numeroA);
 						}
 						if(factorialB==0)
 						{
 							resultadoB=Factorial(numeroB);
-						}
+						}*/
 					}
 				}
 				system("pause");
@@ -153,7 +154,7 @@ int main()
 					{
 						printf("El resultado de A/B es: %.2f \n", resultadoDivision);
 					}
-
+					factorialA=ValidoFactorial(numeroA);
 					if(factorialA==1)
 					{
 						resultadoA=printf("No se puede ejecutar factorial A! ya que es un numero decimal o negativo \n");
@@ -162,6 +163,7 @@ int main()
 					{
 						printf("\n El factorial A! es: %ld  \n ", resultadoA);
 					}
+					factorialB=ValidoFactorial(numeroB);
 					if(factorialB==1)
 					{
 						resultadoB=printf("No se puede ejecutar factorial B! ya que es un numero decimal o negativo \n");
@@ -175,7 +177,7 @@ int main()
 				break;
 
 			case 5:
-				system("COLOR 06");
+				system("COLOR 07");
 				printf("\n **INGRESO SALIR...GRACIAS POR USAR LA CALCULADORA TP1** \n ");
 				system("pause");
 				break;
