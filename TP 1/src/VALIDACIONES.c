@@ -58,6 +58,8 @@ int ValidoFactorial(float numeroFloat)
   return rtn;
 }
 
+//HASTA ACA, VALIDACIONES PARA CALCULADORA TP1
+
 double PedirDouble(char mensaje[], char mensajeError[], double minimo, double maximo)
 {
      double numeroIngresado;

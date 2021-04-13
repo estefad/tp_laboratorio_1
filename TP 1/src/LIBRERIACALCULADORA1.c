@@ -118,19 +118,8 @@ int main()
 						resultadoResta=Restar(numeroA, numeroB);
 						resultadoProducto=Multiplicacion(numeroA, numeroB);
 						resultadoDivision=Division(numeroA, numeroB);
-
-						//factorialA=ValidoFactorial(numeroA);
-						//factorialB=ValidoFactorial(numeroB);
 						resultadoA=Factorial(numeroA);
 						resultadoB=Factorial(numeroB);
-					/*	if(factorialA==0)
-						{
-							resultadoA=Factorial(numeroA);
-						}
-						if(factorialB==0)
-						{
-							resultadoB=Factorial(numeroB);
-						}*/
 					}
 				}
 				system("pause");
