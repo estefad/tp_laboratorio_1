@@ -52,4 +52,12 @@ float Division(float numero1, float numero2);
  */
 unsigned long int Factorial(long int numero1);
 
+/**
+ * @fn int ValidoFactorial(float)
+ * @brief valido si el parametro que se ingresa es decimal o entero
+ *
+ * @return 1 si el parametro es decimal, 0 si es entero
+ */
+int ValidoFactorial(float numero);
+
 #endif /* LIBRERIACALCULADORA_H_ */

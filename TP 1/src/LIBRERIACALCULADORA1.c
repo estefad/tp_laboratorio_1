@@ -1,6 +1,6 @@
 /*
  ============================================================================
- Name        : LIBRERIACALCULADORA1.c
+ Name        : LIBRERIACALCULADORA1.c TP1
  Author      : Dominguez Estefania
  Curso       : 1f
  ============================================================================
@@ -33,6 +33,9 @@ int main()
 	float resultadoDivision;
 	long int resultadoA;
 	long int resultadoB;
+
+	int factorialA;
+	int factorialB;
 
 	float contadorX;
 	float contadorY;
@@ -115,8 +118,18 @@ int main()
 						resultadoResta=Restar(numeroA, numeroB);
 						resultadoProducto=Multiplicacion(numeroA, numeroB);
 						resultadoDivision=Division(numeroA, numeroB);
-						resultadoA=Factorial(numeroA);
-						resultadoB=Factorial(numeroB);
+
+						factorialA=ValidoFactorial(numeroA);
+						factorialB=ValidoFactorial(numeroB);
+
+						if(factorialA==0)
+						{
+							resultadoA=Factorial(numeroA);
+						}
+						if(factorialB==0)
+						{
+							resultadoB=Factorial(numeroB);
+						}
 					}
 				}
 				system("pause");
@@ -140,17 +153,18 @@ int main()
 					{
 						printf("El resultado de A/B es: %.2f \n", resultadoDivision);
 					}
-					if(numeroA<0 || numeroA==',' || numeroA=='.')
+
+					if(factorialA==1)
 					{
-						resultadoA=printf("No se puede ejecutar factorial A! ya que es un numero decimal o negativo");
+						resultadoA=printf("No se puede ejecutar factorial A! ya que es un numero decimal o negativo \n");
 					}
 					else
 					{
 						printf("\n El factorial A! es: %ld  \n ", resultadoA);
 					}
-					if(numeroB<0 || numeroB==',' || numeroB=='.')
+					if(factorialB==1)
 					{
-						resultadoB=printf("No se puede ejecutar factorial B! ya que es un numero decimal o negativo");
+						resultadoB=printf("No se puede ejecutar factorial B! ya que es un numero decimal o negativo \n");
 					}
 					else
 					{
@@ -161,6 +175,7 @@ int main()
 				break;
 
 			case 5:
+				system("COLOR 06");
 				printf("\n **INGRESO SALIR...GRACIAS POR USAR LA CALCULADORA TP1** \n ");
 				system("pause");
 				break;
@@ -168,9 +183,6 @@ int main()
 
 	}while(opcionesMenu!=5);
 
-
-
 	return EXIT_SUCCESS;
 }
-
 

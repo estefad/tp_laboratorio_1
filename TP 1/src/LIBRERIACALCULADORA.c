@@ -43,14 +43,31 @@ float Division(float numero1, float numero2)
 unsigned long int Factorial(long int numero1)
 {
 	 long int resultado;
-	 resultado=1;
+	 resultado=1; //lo inicializo en 1, para que no me tome el 0, sino, cada multiplicion que haga en 0, da 0.
 	 while(numero1>1)
 	 {
 	      resultado*= numero1;
 	      numero1--;
 	 }
 
-
 	 return resultado;
 }
 
+
+int ValidoFactorial(float numeroFloat)
+{
+	int rtn;
+	int tomoEntero;
+
+	tomoEntero=numeroFloat;//si ingreso un numero decimal, va a tomar solo la parte entera y en if comparo.
+	if(numeroFloat>tomoEntero || numeroFloat<0)
+	{
+		rtn=1;
+	}
+	else
+	{
+		rtn=0;
+	}
+
+  return rtn;
+}
