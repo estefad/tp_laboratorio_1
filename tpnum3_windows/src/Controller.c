@@ -130,7 +130,7 @@ int controller_editEmployee(LinkedList* pArrayListEmployee)
 			for(i=0; i<len; i++)
 			{
 				myEmployee=(Employee*)ll_get(pArrayListEmployee, i);//pido que me busque el empleado segun el id
-				if(employee_getId(myEmployee, idAux))
+				if(employee_getId(myEmployee, &idAux))
 				{
 					employee_showEmployee(myEmployee);//lo muestro si existe
 					break;
@@ -188,7 +188,7 @@ int controller_removeEmployee(LinkedList* pArrayListEmployee)
 	int rtn=-1;
 	int i;
 	int idAux;
-	char remove;
+	char respuesta;
 	int len;
 	Employee* myEmployee;
 
@@ -204,8 +204,8 @@ int controller_removeEmployee(LinkedList* pArrayListEmployee)
 				{
 					printf("Esta seguro de eliminar? s/n: ");
 					fflush(stdin);
-					scanf("%s", remove);
-					if(remove=='s')
+					scanf("%s", respuesta);
+					if(respuesta=='s')
 					{
 						if(ll_pop(pArrayListEmployee, i))
 						{
@@ -271,20 +271,22 @@ int controller_sortEmployee(LinkedList* pArrayListEmployee)
 {
 	int rtn=-1;
 	int opcion;
-	Employee* employee1;
-	Employee* employee2;
+	//Employee* employee1;
+	//Employee* employee2;
 
 	if(pArrayListEmployee!=NULL)
 	{
-		GetInt(&opcion, "Ingrese una opcion de ordenamiento: 0-Ascendente\n 1-Descendente\n 2-SALIR\n", "Error, reintente", 1, 2);
+		GetInt(&opcion, "Ingrese una opcion de ordenamiento: 0-Ascendente\n 1-Descendente\n 2-SALIR\n", "Error, reintente", 0, 2);
 		switch(opcion)
 		{
 			case 1:
-				ll_sort(pArrayListEmployee, employee_CompareByName(employee1, employee2), 0);
+				ll_sort(pArrayListEmployee, employee_CompareByName, 0);//la dir de mem de la funciona
+				ll_sort(pArrayListEmployee, employee_CompareById, 0);
 				rtn=1;
 				break;
 			case 2:
-				ll_sort(pArrayListEmployee, employee_CompareByName(employee1, employee2), 1);
+				ll_sort(pArrayListEmployee, employee_CompareByName, 1);
+				ll_sort(pArrayListEmployee, employee_CompareById, 1);
 				rtn=1;
 				break;
 			case 3:
@@ -378,7 +380,4 @@ int controller_saveAsBinary(char* path , LinkedList* pArrayListEmployee)
 
 
 
-int controller_searchById(LinkedList* this, int id)
-{
 
-}

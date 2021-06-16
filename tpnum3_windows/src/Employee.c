@@ -149,17 +149,29 @@ int employee_showEmployee(Employee* miEmployee)
 
 int employee_CompareByName(void* e1, void* e2)//generico
 {
-	int compare;
+	int compare;//no setear
 //de generico a particular, casteo los empleados
 	Employee* emp1;
 	Employee* emp2;
+	char name1Aux[128];
+	char name2Aux[128];
 	emp1=(Employee*)e1;//casteo
-	emp1=(Employee*)e2;
+	emp2=(Employee*)e2;//*hasta aca dejar
 
-//comparo la entrada de nombre
+	employee_getNombre(emp1, name1Aux);
+	employee_getNombre(emp2, name2Aux);
+
 	if(emp1!=NULL && emp2!=NULL)
 	{
-		compare=strcmp(emp1->nombre, emp2->nombre);
+		if(strcmp(name1Aux, name2Aux)>0)
+		{
+			compare=1;
+		}
+		else
+		{
+			compare=0;
+		}
+
 	}
 	return compare;
 }
@@ -167,27 +179,27 @@ int employee_CompareByName(void* e1, void* e2)//generico
 
 int employee_CompareById(void* e1, void* e2)
 {
-	int comp=-1;
+	int comp;
 
 	Employee* emp1;
 	Employee* emp2;
+	int idAux1;
+	int idAux2;
 	emp1=(Employee*)e1;//casteo
-	emp1=(Employee*)e2;
+	emp2=(Employee*)e2;
 
 //comparo con funcion get id y despues if
-	if(employee_getId(emp1, e1) && employee_getId(emp2, e2))
+
+	employee_getId(emp1, &idAux1);
+	employee_getId(emp2, &idAux2);
+
+	if(idAux1 > idAux2)
 	{
-		if(emp1->id > emp2->id)
-		{
-			comp=1;
-		}
-		else
-		{
-			if(emp1->id < emp2->id)
-			{
-				comp=0;
-			}
-		}
+		comp=1;
+	}
+	else
+	{
+		comp=0;
 	}
 	return comp;
 }

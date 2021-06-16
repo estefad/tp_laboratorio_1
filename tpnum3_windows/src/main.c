@@ -79,8 +79,8 @@ int main()
       				break;
 
       			case 7://*Sort by name*
-      				controller_sortEmployee(listaEmpleados);
-      				if(controller_sortEmployee(listaEmpleados)==1)
+      				lenEmployee=controller_sortEmployee(listaEmpleados);
+      				if(lenEmployee!=0)
       				{
       					puts("ordenamiento finalizado con exito");
       				}
